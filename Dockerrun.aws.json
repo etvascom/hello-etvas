@@ -1,9 +1,0 @@
-{
-  "AWSEBDockerrunVersion": "1",
-  "Volumes": [
-    {
-      "HostDirectory": "/pm2",
-      "ContainerDirectory": "/var/log/pm2"
-    }
-  ]
-}
