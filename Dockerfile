@@ -17,6 +17,7 @@ ADD ./.docker/nginx.conf /etc/nginx/nginx.conf
 RUN npm install pm2 -g
 
 ADD ./.docker/start.sh /start.sh
+RUN chmod +x /start.sh
 
 EXPOSE 8080
 
