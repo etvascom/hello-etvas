@@ -5,7 +5,7 @@
   "dependencies": {
     "@etvas/etvaskit": "^1.0.22",
     "@etvas/i18n": "^1.2.0",
-    "axios": "^0.21.1",
+    "axios": "^0.21.2",
     "copy-webpack-plugin": "^6.0.3",
     "formik": "^2.2.6",
     "react": "^17.0.1",
