@@ -1,15 +1,16 @@
-const axios = require('axios')
+import axios from 'axios'
+import storage from '@shared/storage'
 
 const client = axios.create({
-  baseURL: process.env.REACT_APP_BACKEND || '/api/'
+  baseURL: process.env.REACT_APP_BACKEND || '/api/',
 })
 
 client.interceptors.request.use(config => {
-  const token = sessionStorage.getItem('token')
+  const token = storage.getItem('token')
   if (token) {
     config.headers['Authorization'] = token
   }
   return config
 }, Promise.reject)
 
-module.exports = client
+export default client
