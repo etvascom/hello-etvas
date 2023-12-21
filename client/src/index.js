@@ -1,5 +1,5 @@
 import React from 'react'
-import ReactDOM from 'react-dom'
+import { createRoot } from 'react-dom/client'
 import Root from './app/Root'
 import * as serviceWorker from './serviceWorker'
 import storage from '@shared/storage'
@@ -7,7 +7,8 @@ import { getQueryVars } from '@shared/funcs'
 
 persistToken()
 
-ReactDOM.render(<Root />, document.getElementById('root'))
+const root = createRoot(document.getElementById('root'))
+root.render(<Root />)
 
 serviceWorker.unregister()
 
