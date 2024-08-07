@@ -2,7 +2,7 @@ FROM nginx:stable
 
 RUN apt-get update
 RUN apt-get install --no-install-recommends curl software-properties-common -y
-RUN curl -sL https://deb.nodesource.com/setup_12.x | bash -
+RUN curl -sL https://deb.nodesource.com/setup_20.x | bash -
 RUN apt-get install --no-install-recommends nodejs -y
 
 ADD server /server
