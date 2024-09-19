@@ -17,8 +17,14 @@ etvas.init({
 const app = express()
 const port = process.env.PORT || 5001
 
+const rawBodySaver = function (req, res, buf, encoding) {
+  if (buf && buf.length) {
+    req.rawBody = buf.toString(encoding || 'utf8')
+  }
+}
+
 app.use(cors())
-app.use(parser.json())
+app.use(parser.json({ verify: rawBodySaver, limit: '1mb' }))
 app.use(parser.urlencoded({ extended: true }))
 
 const mainRouter = express.Router()
