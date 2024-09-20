@@ -17,7 +17,7 @@ etvas.init({
 const app = express()
 const port = process.env.PORT || 5001
 
-const rawBodySaver = function (req, res, buf, encoding) {
+const rawBodySaver = function (req, _, buf, encoding) {
   if (buf && buf.length) {
     req.rawBody = buf.toString(encoding || 'utf8')
   }
